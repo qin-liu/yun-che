@@ -1,0 +1,10 @@
+manage:
+  username: test
+  password: test
+db:
+  username: root
+  port: 3306
+  host: localhost
+  dbname: yunche
+deploy_host: localhost:8083
+run_at: :8083
