@@ -21,11 +21,11 @@ func main() {
 
 	router := gin.Default()
 	router.Delims("{[{", "}]}")
-	router.StaticFS("/assets", http.Dir("./frontend/assets"))
-	router.LoadHTMLFiles("./frontend/index.tmpl")
+	router.StaticFS("/static", http.Dir("./frontend/dist/static"))
+	router.LoadHTMLFiles("./frontend/dist/index.html")
 
 	router.GET("/", func(c *gin.Context) {
-		c.HTML(http.StatusOK, "index.tmpl", nil)
+		c.HTML(http.StatusOK, "index.html", nil)
 	})
 
 	router.Run(config.RunAt)
